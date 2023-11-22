@@ -1,5 +1,5 @@
 # microdot-sample
-Ejemplo de implementacion de indicador de temperatura con una interfaz web en un servidor tipo Flask corriendo con Micropython en una Raspberry Pi Pico W
+Evaluación de Iván Cenyko, 7° 1° Av Com. C. Implementacion de indicador de temperatura con una interfaz web en un servidor tipo Flask corriendo con Micropython en una ESP32.
 
 ## Estructura de archivos
 
