@@ -10,5 +10,5 @@ Evaluación de Iván Cenyko, 7° 1° Av com. C. Implementacion de indicador de t
     |-- css (directorio con archivos CSS)
         |-- style.css (estilos de la interfaz)
     |-- js (directorio con archivos JS)
-        |-- data.js (script que actualiza la interfaz periodicamente)
+        |-- script.js (script que actualiza la interfaz periodicamente)
 ```
