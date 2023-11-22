@@ -4,11 +4,17 @@ Evaluación de Iván Cenyko, 7° 1° Av com. C. Implementacion de indicador de t
 ## Estructura de archivos
 
 ```
-|-- main.py (aplicacion)
-|-- index.html (interfaz de la aplicacion)
-|-- assets (directorio con archivos CSS y JS)
-    |-- css (directorio con archivos CSS)
-        |-- style.css (estilos de la interfaz)
-    |-- js (directorio con archivos JS)
-        |-- script.js (script que actualiza la interfaz periodicamente)
+├── assets
+│   ├── css
+│   │   └── style.css (CSS de la web)
+│   └── js
+│       └── script.js (JS de la web)
+├── index.html (HTML de la web)
+├── librerias
+│   ├── ds18x20.py (librería ds18x20)
+│   ├── microdot.py (librería microdot)
+│   └── onewire.py (librería onewire)
+├── main.py (aplicación)
+└── README.md
+
 ```
