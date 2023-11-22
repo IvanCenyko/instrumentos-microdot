@@ -24,6 +24,23 @@ def connect_to(ssid, passwd):
         
 # Importo lo necesario para la aplicacion de Microdot
 from microdot import Microdot, send_file
+import time
+from machine import Pin
+from ds18x20 import DS18X20
+from onewire import OneWire
+
+# one wire init
+ow = OneWire(Pin(23, Pin.OPEN_DRAIN))
+# ds18x20 init
+temp = DS18X20(ow)
+# printeo powermode
+print("Powermode = ", temp.powermode(Pin(23)))
+# hago scan
+roms = temp.scan()
+# seteo resolucion del dispositivo scaneado
+temp.resolution(roms[0], 9)
+# printeo resolucion
+print("Resolucion", temp.resolution(roms[0]))
 
 # Creo una instancia de Microdot
 app = Microdot()
@@ -62,16 +79,11 @@ def data_update(request):
     
     returns (dict): Retorna un diccionario con los datos leidos
     """
-    # Importo ADC para lectura analogica
-    from machine import ADC
-    # Creo una instancia asociada al sensor de temperatura interno
-    sensor_temp = ADC(4)
-    # Leo el dato del sensor y ajusto para obtener la tension
-    lectura = sensor_temp.read_u16() * 3.3 / (1 << 16)
-    # Ajusto para leer la temperatura (Seccion 3.3 de Raspberry Pi Pico Python SDK)
-    temperatura_cpu = 27 - (lectura - 0.706) / 0.001721
-    # Retorno el diccionario
-    return { "cpu_temp" : temperatura_cpu }
+    # hago medicion
+    temp.convert_temp()
+    # retorno el valor
+    return {"temp": temp.read_temp(roms[0])}
+
     
 
 

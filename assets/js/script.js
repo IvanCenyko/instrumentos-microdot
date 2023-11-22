@@ -4,8 +4,8 @@ const units = {
 };
 
 const config = {
-	minTemp: -20,
-	maxTemp: 50,
+	minTemp: -10,
+	maxTemp: 120,
 	unit: "Celcius"
 };
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             // Guardo el valor de temperatura en la variable temp
-
+            temp = data.temp;
             // Asigno el valor de temperatura al termometro
             temperature.style.height = (temp - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
             temperature.dataset.value = temp + units[config.unit];
