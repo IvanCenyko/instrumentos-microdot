@@ -4,6 +4,7 @@ Evaluación de Iván Cenyko, 7° 1° Av com. C. Implementacion de indicador de t
 ## Estructura de archivos
 
 ```
+.
 ├── assets
 │   ├── css
 │   │   └── style.css (CSS de la web)
