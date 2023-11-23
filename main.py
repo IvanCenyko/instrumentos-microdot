@@ -92,7 +92,7 @@ if __name__ == "__main__":
     
     try:
         # Me conecto a internet
-        ip = connect_to("<SSID>", "<PASSWD>")
+        ip = connect_to("Red Alumnos", "")
         # Muestro la direccion de IP
         print("Microdot corriendo en IP/Puerto: " + ip + ":5000")
         # Inicio la aplicacion
